@@ -29,7 +29,7 @@ a {
 
 .app-container {
   width: 80%;
-  height: 82.5%;
+  height: 80%;
   display: flex;
   border-radius: 16px;
   backdrop-filter: blur(5px);
