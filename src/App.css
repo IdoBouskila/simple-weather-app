@@ -224,3 +224,8 @@ a {
   width: 20px;
 }
 
+.map-container {
+  grid-area: map;
+  background: green;
+}
+
