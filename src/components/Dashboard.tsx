@@ -1,3 +1,4 @@
+import Map from './Map';
 import img from '../assets/3d-weather-icon.png'; // TODO: [-] Remove this line
 import { PiDropLight, PiEyeLight, PiSunLight, PiWindLight } from 'react-icons/pi';
 
@@ -51,7 +52,8 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <div className='map-container'></div>
+            <Map coordinates={{ lat: 32.0678, lng: 34.7647 }} />
+
         </div>
     );
 };
