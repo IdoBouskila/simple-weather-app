@@ -54,6 +54,36 @@ const Dashboard = () => {
 
             <Map coordinates={{ lat: 32.0678, lng: 34.7647 }} />
 
+            <div className='popular-cities'>
+                <h1>Popular Cities</h1>
+
+                <div className='cities'>
+                    <div>
+                        <h2>London</h2>
+                        <span>25°C</span>
+                    </div>
+
+                    <div>
+                        <h2>Paris</h2>
+                        <span>30°C</span>
+                    </div>
+
+                    <div>
+                        <h2>New York</h2>
+                        <span>20°C</span>
+                    </div>
+
+                    <div>
+                        <h2>Tokyo</h2>
+                        <span>35°C</span>
+                    </div>
+
+                    <div>
+                        <h2>Rome</h2>
+                        <span>28°C</span>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

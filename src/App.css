@@ -228,3 +228,34 @@ a {
   grid-area: map;
 }
 
+.popular-cities {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  grid-area: popular-cities;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.popular-cities h1 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.popular-cities .cities {
+  justify-content: space-around;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-cities .cities div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popular-cities .cities h2,
+.popular-cities .cities span {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
