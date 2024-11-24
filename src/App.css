@@ -189,17 +189,23 @@ a {
   flex-direction: column;
 }
 
-.weather-degrees-container .degrees {
+.degrees {
   position: relative;
+}
+
+.degrees::after {
+  content: 'o';
+  position: absolute;
+}
+
+.weather-degrees-container .degrees {
   font-size: 3.5rem;
   font-weight: 600;
 }
 
 .weather-degrees-container .degrees::after {
-  content: 'o';
   font-size: 1rem;
   font-weight: 400;
-  position: absolute;
   inset: 0 -0.75rem auto auto;
 }
 
