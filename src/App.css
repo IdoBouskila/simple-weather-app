@@ -241,7 +241,8 @@ a {
   display: flex;
   flex-direction: column;
   grid-area: popular-cities;
-  background: rgba(0, 0, 0, 0.1);
+  /* TODO: [-] Extract to variable */
+  background: rgba(255, 255, 255, 0.075);
 }
 
 .popular-cities h1 {
