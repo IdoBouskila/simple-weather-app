@@ -267,3 +267,47 @@ a {
   font-weight: 300;
 }
 
+.weekly-forecast {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  grid-area: weekly-forecast;
+  /* TODO: [-] Extract to variable */
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.weekly-forecast h1 {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.weekly-forecast ul {
+  gap: 0.25rem;
+  display: flex;
+  overflow: auto;
+  font-size: 0.85rem;
+  flex-direction: column;
+}
+
+.weekly-forecast li {
+  gap: 1rem;
+  display: flex;
+  font-weight: 300;
+  padding: 8px 10px;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.weekly-forecast li:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.weekly-forecast li span.date {
+  margin-left: auto;
+}
+
+.weekly-forecast li img {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
