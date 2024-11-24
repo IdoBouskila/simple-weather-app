@@ -7,8 +7,10 @@ html {
   padding: 0;
   outline: none;
   list-style: none;
+  scrollbar-width: thin;
   box-sizing: border-box;
   font-family: 'Roboto', serif;
+  scrollbar-color: rgba(255, 255, 255, 0.565) transparent;
 }
 
 body {
