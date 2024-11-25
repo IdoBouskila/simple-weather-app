@@ -84,6 +84,91 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
+
+            <div className='weekly-forecast'>
+                <h1>Forecast</h1>
+                
+                <ul>
+                    <li>
+                        <img src={ img } alt='weather-icon' />
+
+                        <span>
+                            24° / 18°
+                        </span>
+
+                        <span className='date'>
+                            25 Jul, Thu
+                        </span>
+                    </li>
+                    <li>
+                        <img src={ img } alt='weather-icon' />
+
+                        <span>
+                            24° / 18°
+                        </span>
+
+                        <span className='date'>
+                            25 Jul, Thu
+                        </span>
+                    </li>
+                    <li>
+                        <img src={ img } alt='weather-icon' />
+
+                        <span>
+                            24° / 18°
+                        </span>
+
+                        <span className='date'>
+                            25 Jul, Thu
+                        </span>
+                    </li>
+                    <li>
+                        <img src={ img } alt='weather-icon' />
+
+                        <span>
+                            24° / 18°
+                        </span>
+
+                        <span className='date'>
+                            25 Jul, Thu
+                        </span>
+                    </li>
+                    <li>
+                        <img src={ img } alt='weather-icon' />
+
+                        <span>
+                            24° / 18°
+                        </span>
+
+                        <span className='date'>
+                            25 Jul, Thu
+                        </span>
+                    </li>
+                    <li>
+                        <img src={ img } alt='weather-icon' />
+
+                        <span>
+                            24° / 18°
+                        </span>
+
+                        <span className='date'>
+                            25 Jul, Thu
+                        </span>
+                    </li>
+                    <li>
+                        <img src={ img } alt='weather-icon' />
+
+                        <span>
+                            24° / 18°
+                        </span>
+
+                        <span className='date'>
+                            25 Jul, Thu
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     );
 };
