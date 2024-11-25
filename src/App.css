@@ -135,6 +135,11 @@ a {
   border-radius: var(--border-radius);
 }
 
+.dashboard h1 {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
 .searchbar {
   border: none;
   color: #fff;
@@ -161,11 +166,6 @@ a {
   gap: 0.25rem;
   display: flex;
   flex-direction: column;
-}
-
-.current-weather-container .title-container h1 {
-  font-size: 1rem;
-  font-weight: 500;
 }
 
 .current-weather-container .title-container span {
@@ -245,11 +245,6 @@ a {
   background: rgba(255, 255, 255, 0.075);
 }
 
-.popular-cities h1 {
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
 .popular-cities .cities {
   justify-content: space-around;
   flex: 1;
@@ -275,11 +270,6 @@ a {
   grid-area: weekly-forecast;
   /* TODO: [-] Extract to variable */
   background: rgba(255, 255, 255, 0.075);
-}
-
-.weekly-forecast h1 {
-  font-size: 0.9rem;
-  font-weight: 500;
 }
 
 .weekly-forecast ul {
