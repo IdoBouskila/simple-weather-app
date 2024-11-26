@@ -89,83 +89,21 @@ const Dashboard = () => {
                 <h1>Forecast</h1>
                 
                 <ul>
-                    <li>
-                        <img src={ img } alt='weather-icon' />
+                    {
+                        Array.from({ length: 7 }).map((_, index) => (
+                            <li key={ index }>
+                                <img src={ img } alt='weather-icon' />
 
-                        <span>
-                            24° / 18°
-                        </span>
+                                <span>
+                                    24° / 18°
+                                </span>
 
-                        <span className='date'>
-                            25 Jul, Thu
-                        </span>
-                    </li>
-                    <li>
-                        <img src={ img } alt='weather-icon' />
-
-                        <span>
-                            24° / 18°
-                        </span>
-
-                        <span className='date'>
-                            25 Jul, Thu
-                        </span>
-                    </li>
-                    <li>
-                        <img src={ img } alt='weather-icon' />
-
-                        <span>
-                            24° / 18°
-                        </span>
-
-                        <span className='date'>
-                            25 Jul, Thu
-                        </span>
-                    </li>
-                    <li>
-                        <img src={ img } alt='weather-icon' />
-
-                        <span>
-                            24° / 18°
-                        </span>
-
-                        <span className='date'>
-                            25 Jul, Thu
-                        </span>
-                    </li>
-                    <li>
-                        <img src={ img } alt='weather-icon' />
-
-                        <span>
-                            24° / 18°
-                        </span>
-
-                        <span className='date'>
-                            25 Jul, Thu
-                        </span>
-                    </li>
-                    <li>
-                        <img src={ img } alt='weather-icon' />
-
-                        <span>
-                            24° / 18°
-                        </span>
-
-                        <span className='date'>
-                            25 Jul, Thu
-                        </span>
-                    </li>
-                    <li>
-                        <img src={ img } alt='weather-icon' />
-
-                        <span>
-                            24° / 18°
-                        </span>
-
-                        <span className='date'>
-                            25 Jul, Thu
-                        </span>
-                    </li>
+                                <span className='date'>
+                                    25 Jul, Thu
+                                </span>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
 
