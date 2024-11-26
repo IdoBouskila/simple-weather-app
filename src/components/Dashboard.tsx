@@ -52,7 +52,7 @@ const Dashboard = () => {
                 </div>
             </div>
 
-            <Map coordinates={{ lat: 32.0678, lng: 34.7647 }} />
+            <Map coordinates={{ lat: 51.5, lng: 0.12 }} />
 
             <div className='popular-cities'>
                 <h1>Popular Cities</h1>
