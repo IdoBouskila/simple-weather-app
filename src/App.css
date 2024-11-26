@@ -29,6 +29,13 @@ a {
   place-items: center;
 }
 
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .app-container {
   width: 80%;
   height: 80%;
@@ -302,3 +309,48 @@ a {
   height: 1.75rem;
 }
 
+.hourly-forecast {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  grid-area: hourly-forecast;
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.hourly-forecast > div {
+  gap: 1.5rem;
+  display: flex;
+  text-wrap: nowrap;
+  overflow: auto;
+}
+
+.hourly-forecast .weather-item {
+  gap: 0.7rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  flex-direction: column;
+}
+
+.hourly-forecast .weather-item-time {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.hourly-forecast .weather-item-temp {
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.hourly-forecast .weather-details {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.hourly-forecast .weather-details div {
+  gap: 0.45rem;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+}
