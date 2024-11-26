@@ -1,5 +1,5 @@
 import Map from './Map';
-import img from '../assets/3d-weather-icon.png'; // TODO: [-] Remove this line
+import img from '../../public/3d-weather-icon.png' // TODO: [-] Remove this line
 import { PiDropLight, PiEyeLight, PiSunLight, PiThermometerSimple, PiWind, PiWindLight } from 'react-icons/pi';
 
 const Dashboard = () => {
