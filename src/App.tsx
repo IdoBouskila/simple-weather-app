@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import tabs from './components/utils/tabs';
+import Dashboard from './components/Dashboard';
 import SideNavigation from './components/SideNavigation';
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
 				currentTabId={ currentTabId }
 				setCurrentTab={ setCurrentTabId }
 			/>
+
+			<Dashboard />
 		</div>
 	);
 }

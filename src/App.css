@@ -7,13 +7,16 @@ html {
   padding: 0;
   outline: none;
   list-style: none;
+  scrollbar-width: thin;
   box-sizing: border-box;
   font-family: 'Roboto', serif;
+  scrollbar-color: rgba(255, 255, 255, 0.565) transparent;
 }
 
 body {
+  color: #fff;
   height: 100vh;
-  background: radial-gradient(circle, rgba(62,115,183,1) 0%, rgba(31,90,170,1) 100%);
+  background: radial-gradient(circle, rgb(75, 120, 180) 0%,  rgb(62,115,183) 40%, rgba(31,90,170,1) 100%);
 }
 
 a {
@@ -26,9 +29,16 @@ a {
   place-items: center;
 }
 
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .app-container {
   width: 80%;
-  height: 82.5%;
+  height: 80%;
   display: flex;
   border-radius: 16px;
   backdrop-filter: blur(5px);
@@ -104,6 +114,243 @@ a {
   border-radius: 50%;
   transition: background-color 0.15s ease-in-out;
 }
+
 .side-navigation .github-link:hover {
   background: var(--active-color);
+}
+
+.dashboard {
+  --map-width: 50%;
+  --padding: 1.25rem;
+  --border-radius: 1rem; 
+  --top-bar-height: 2.5rem;
+  --dashboard-first-row-height: 42%;
+  
+  gap: 1rem;
+  width: 100%;
+  display: grid;
+  padding: 2rem;
+  grid-template: 'searchbar . .'
+                 'current-forecast map popular-cities'
+                 'weekly-forecast hourly-forecast hourly-forecast';
+  grid-template-columns: minmax(0, 1fr) var(--map-width) minmax(0, 1fr);
+  grid-template-rows: var(--top-bar-height) var(--dashboard-first-row-height) minmax(0, 1fr);
+}
+
+.dashboard > div {
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+}
+
+.dashboard h1 {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.searchbar {
+  border: none;
+  color: #fff;
+  display: flex;
+  font-weight: 300;
+  align-items: center;
+  grid-area: searchbar;
+  padding: 1.15rem 2rem;
+  border-radius: 0.5rem;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.09) url('../public/search-icon.png') no-repeat left 3% center / 8%;
+}
+
+.current-weather-container {
+  gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-area: current-forecast;
+  background: rgba(0, 0, 0, 0.09);
+}
+
+.current-weather-container .title-container {
+  gap: 0.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.current-weather-container .title-container span {
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+.weather-degrees-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+}
+
+.weather-degrees-container img {
+  width: 6.5rem;
+}
+
+.weather-degrees-container > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.degrees {
+  position: relative;
+}
+
+.degrees::after {
+  content: 'o';
+  position: absolute;
+}
+
+.weather-degrees-container .degrees {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.weather-degrees-container .degrees::after {
+  font-size: 1rem;
+  font-weight: 400;
+  inset: 0 -0.75rem auto auto;
+}
+
+.weather-degrees-container .weather-description {
+  font-weight: 300;
+}
+
+
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather-details div {
+  gap: 0.25rem;
+  display: flex;
+  font-size: 0.75rem;
+  align-items: center;
+  flex-direction: column;
+}
+
+.weather-details div svg {
+  height: 20px;
+  width: 20px;
+}
+
+.map-container {
+  grid-area: map;
+}
+
+.popular-cities {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  grid-area: popular-cities;
+  /* TODO: [-] Extract to variable */
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.popular-cities .cities {
+  justify-content: space-around;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-cities .cities div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.popular-cities .cities h2,
+.popular-cities .cities span {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.weekly-forecast {
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  grid-area: weekly-forecast;
+  /* TODO: [-] Extract to variable */
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.weekly-forecast ul {
+  gap: 0.25rem;
+  display: flex;
+  overflow: auto;
+  font-size: 0.85rem;
+  flex-direction: column;
+}
+
+.weekly-forecast li {
+  gap: 1rem;
+  display: flex;
+  font-weight: 300;
+  padding: 8px 10px;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+
+.weekly-forecast li:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.weekly-forecast li span.date {
+  margin-left: auto;
+}
+
+.weekly-forecast li img {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.hourly-forecast {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  grid-area: hourly-forecast;
+  background: rgba(255, 255, 255, 0.075);
+}
+
+.hourly-forecast > div {
+  gap: 1.5rem;
+  display: flex;
+  text-wrap: nowrap;
+  overflow: auto;
+}
+
+.hourly-forecast .weather-item {
+  gap: 0.7rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  flex-direction: column;
+}
+
+.hourly-forecast .weather-item-time {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.hourly-forecast .weather-item-temp {
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.hourly-forecast .weather-details {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.hourly-forecast .weather-details div {
+  gap: 0.45rem;
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
 }

@@ -1,6 +1,7 @@
 import { IconType } from 'react-icons';
 import { RxDashboard } from 'react-icons/rx';
-import { IoHeartOutline } from "react-icons/io5";
+import { IoHeartOutline } from 'react-icons/io5';
+
 type Tab = {
     id: string;
     label: string;
