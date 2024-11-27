@@ -43,7 +43,8 @@ a {
   height: 10rem;
   position: absolute;
   background-size: contain;
-  background-image: url('/src/cloud.png');
+  background-image: url('/cloud.png');
+  animation: drift 20s ease-in-out infinite;
 }
 
 .clouds::before {
@@ -53,11 +54,12 @@ a {
   height: 100%;
   top: -1vh;
   left: 35vw;
+  scale: 1.25;
   position: absolute;
   border-radius: 16px;
   background-size: contain;
-  background-image: url('/src/cloud.png');
-  scale: 1.25;
+  background-image: url('/cloud.png');
+  animation: float 10s ease-in-out infinite;
 }
 
 .clouds::after {
@@ -67,12 +69,12 @@ a {
   height: 100%;
   top: 1vh;
   left: 70vw;
+  scale: 0.8;
   z-index: -1;
   position: absolute;
   border-radius: 16px;
   background-size: contain;
-  background-image: url('/src/cloud.png');
-  scale: 0.8;
+  background-image: url('/cloud.png');
 }
 
 .app-container {
@@ -394,3 +396,14 @@ a {
   align-items: center;
   color: rgba(255, 255, 255, 0.8);
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -10px); }
+}
+
