@@ -199,7 +199,7 @@ a {
   padding: 1.15rem 2rem;
   border-radius: 0.5rem;
   justify-content: center;
-  background: rgba(0, 0, 0, 0.09) url('../public/search-icon.png') no-repeat left 3% center / 8%;
+  background: rgba(0, 0, 0, 0.09) url('/src/search-icon.png') no-repeat left 3% center / 8%;
 }
 
 .current-weather-container {

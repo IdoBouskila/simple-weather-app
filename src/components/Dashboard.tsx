@@ -1,5 +1,4 @@
 import Map from './Map';
-import img from '../../public/3d-weather-icon.png' // TODO: [-] Remove this line
 import { PiDropLight, PiEyeLight, PiSunLight, PiThermometerSimple, PiWind, PiWindLight } from 'react-icons/pi';
 
 const Dashboard = () => {
@@ -19,7 +18,7 @@ const Dashboard = () => {
 
                 <div className='weather-degrees-container'>
                     <img
-                        src={ img }
+                        src='/3d-weather-icon.png'
                         alt='weather-icon'
                     />
 
@@ -92,7 +91,7 @@ const Dashboard = () => {
                     {
                         Array.from({ length: 7 }).map((_, index) => (
                             <li key={ index }>
-                                <img src={ img } alt='weather-icon' />
+                                <img src='/3d-weather-icon.png' alt='weather-icon' />
 
                                 <span>
                                     24° / 18°
