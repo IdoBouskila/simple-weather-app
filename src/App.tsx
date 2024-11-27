@@ -8,14 +8,18 @@ function App() {
 	const [currentTabId, setCurrentTabId] = useState(tabs[0].id);
 
 	return (
-		<div className='app-container'>
-			<SideNavigation
-				currentTabId={ currentTabId }
-				setCurrentTab={ setCurrentTabId }
-			/>
+		<>
+			<div className='clouds'></div>
+			
+			<div className='app-container'>
+				<SideNavigation
+					currentTabId={ currentTabId }
+					setCurrentTab={ setCurrentTabId }
+				/>
 
-			<Dashboard />
-		</div>
+				<Dashboard />
+			</div>
+		</>
 	);
 }
 
