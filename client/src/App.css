@@ -230,7 +230,7 @@ a {
 }
 
 .weather-degrees-container img {
-  width: 6.5rem;
+  width: clamp(5.5rem, 8rem, 50%)
 }
 
 .weather-degrees-container > div {
@@ -248,7 +248,7 @@ a {
 }
 
 .weather-degrees-container .degrees {
-  font-size: 3.5rem;
+  font-size: clamp(2vw, 4.5rem, 4vw);
   font-weight: 600;
 }
 
