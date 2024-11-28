@@ -512,6 +512,33 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.27.4.tgz#67d516613c9f2fe42e2d8b78e252d0003179d92c"
   integrity sha512-3j4jx1TppORdTAoBJRd+/wJRGCPC0ETWkXOecJ6PPZLj6SptXkrXcNqdj0oclbKML6FkQltdz7bBA3rUSirZug==
 
+"@tanstack/query-core@5.61.5":
+  version "5.61.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.61.5.tgz#3ba80527f6474b5edbf348c1b0a6254b3cdfe160"
+  integrity sha512-iG5vqurEOEbv+paP6kW3zPENa99kSIrd1THISJMaTwVlJ+N5yjVDNOUwp9McK2DWqWCXM3v13ubBbAyhxT78UQ==
+
+"@tanstack/react-query@^5.61.5":
+  version "5.61.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-query/-/react-query-5.61.5.tgz#abe26e5f2d7c9c6c0643579abfd9119ac22a88c8"
+  integrity sha512-rjy8aqPgBBEz/rjJnpnuhi8TVkVTorMUsJlM3lMvrRb5wK6yzfk34Er0fnJ7w/4qyF01SnXsLB/QsTBsLF5PaQ==
+  dependencies:
+    "@tanstack/query-core" "5.61.5"
+
+"@trpc/client@^11.0.0-rc.648":
+  version "11.0.0-rc.648"
+  resolved "https://registry.yarnpkg.com/@trpc/client/-/client-11.0.0-rc.648.tgz#275cc0b36e08850754d0c03ccbd911735d734976"
+  integrity sha512-k4FfLKvJwbosUH8KYyZkC50RJHYtIyJECi5WhRXsvaf9a6lgrTlcA+osq815zYcAHo7wEgR9E9UdSTrpLdAQFQ==
+
+"@trpc/react-query@^11.0.0-rc.648":
+  version "11.0.0-rc.648"
+  resolved "https://registry.yarnpkg.com/@trpc/react-query/-/react-query-11.0.0-rc.648.tgz#5725798e4832814d50dd234161e93d10a98f2074"
+  integrity sha512-U3H6o/aN3umEA2QNDGRsaJb6M7zrffor2NQl2UaHOiLBHuXZ3ISI2fJXay7e32s1l6z5F5PGMGwTQtUedzWI2w==
+
+"@trpc/server@^11.0.0-rc.648":
+  version "11.0.0-rc.648"
+  resolved "https://registry.yarnpkg.com/@trpc/server/-/server-11.0.0-rc.648.tgz#500a4ce795ea216059025e7a1ac44e773ff09768"
+  integrity sha512-nKW7FNM+QZrY/CVGlX3hFNIdUvbw6pwSJ+HzEF8GIeSJDKLHK7Ke1QJGI2mRW6oF9dCKMBXfuLaYY2dXfjfn7Q==
+
 "@types/babel__core@^7.20.5":
   version "7.20.5"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.20.5.tgz#3df15f27ba85319caa07ba08d0721889bb39c017"
