@@ -1,8 +1,8 @@
 import './App.css';
+import tabs from '@utils/tabs';
 import { useState } from 'react';
-import tabs from './components/utils/tabs';
-import Dashboard from './components/dashboard';
-import SideNavigation from './components/side-navigation';
+import Dashboard from '@components/dashboard';
+import SideNavigation from '@components/side-navigation';
 
 function App() {
 	const [currentTabId, setCurrentTabId] = useState(tabs[0].id);

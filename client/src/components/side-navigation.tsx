@@ -1,4 +1,4 @@
-import tabs from './utils/tabs';
+import tabs from '@utils/tabs';
 import { RxGithubLogo } from 'react-icons/rx';
 
 const SideNavigation: React.FC<{
