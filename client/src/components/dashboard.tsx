@@ -2,6 +2,8 @@ import Map from './map';
 import { PiWind, PiEyeLight, PiSunLight, PiDropLight, PiWindLight, PiThermometerSimple } from 'react-icons/pi';
 
 const Dashboard = () => {
+    // This is a test lint / ts error
+    const testLint: number = 'test';
     return (
         <div className='dashboard'>
             <input
