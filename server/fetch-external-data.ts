@@ -1,9 +1,7 @@
 const apiKey = process.env.API_KEY;
 const BASE = 'http://api.weatherapi.com/v1';
 
-const fetchExternalData = async <
-	Data extends unknown
->({ endpoint, body, searchParams }: {
+const fetchExternalData = async <Data>({ endpoint, body, searchParams }: {
 	body?: string;
     searchParams?: URLSearchParams;
 	endpoint: `/${ string }`;
