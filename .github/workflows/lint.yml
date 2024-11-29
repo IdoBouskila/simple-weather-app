@@ -16,30 +16,20 @@ jobs:
               node-version: '18'
               cache: 'yarn'
     
+          # Lint client
           - name: Install dependencies for client
             working-directory: ./client
             run: |
-              if [ -f yarn.lock ]; then
-                yarn install
-              else
-                echo "yarn.lock not found in client directory"
-                exit 1
-              fi
-    
+              yarn install
           - name: Run linter for client
             working-directory: ./client
             run: yarn lint
     
+          # Lint server
           - name: Install dependencies for server
             working-directory: ./server
             run: |
-              if [ -f yarn.lock ]; then
-                yarn install
-              else
-                echo "yarn.lock not found in server directory"
-                exit 1
-              fi
-    
+              yarn install
           - name: Run linter for server
             working-directory: ./server
             run: yarn lint
