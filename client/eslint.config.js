@@ -18,7 +18,7 @@ export default tseslint.config(
 		plugins: {
 			'react-hooks': reactHooks,
 			'react-refresh': reactRefresh,
-      unicorn: eslintPluginUnicorn,
+			unicorn: eslintPluginUnicorn,
 			perfectionist: perfectionist,
 		},
 		rules: {
@@ -30,7 +30,7 @@ export default tseslint.config(
 			'perfectionist/sort-imports': [
 				'error',
 				{
-          groups: [],
+					groups: [],
 					order: 'asc',
 					type: 'line-length',
 					newlinesBetween: 'ignore',
@@ -43,12 +43,12 @@ export default tseslint.config(
 					type: 'line-length',
 				},
 			],
-      'unicorn/filename-case': [
-        'error',
-        {
-          case: 'kebabCase',
-        }
-      ]
+			'unicorn/filename-case': [
+				'error',
+				{
+					case: 'kebabCase',
+				},
+			],
 		},
 	}
 );
