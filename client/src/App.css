@@ -179,7 +179,7 @@ a {
   grid-template-rows: var(--top-bar-height) var(--dashboard-first-row-height) minmax(0, 1fr);
 }
 
-.dashboard > div {
+.dashboard > div:not(.search-bar-container) {
   padding: var(--padding);
   border-radius: var(--border-radius);
 }
@@ -189,17 +189,56 @@ a {
   font-size: 0.9rem;
 }
 
-.searchbar {
-  border: none;
-  color: #fff;
-  display: flex;
-  font-weight: 300;
-  align-items: center;
+.search-bar-container {
+  position: relative;
   grid-area: searchbar;
-  padding: 1.15rem 2rem;
+}
+
+.searchbar {
+  width: 100%;
+  border: none;
+  height: 100%;
+  color: #fff;
+  font-weight: 300;
   border-radius: 0.5rem;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.09) url('/src/search-icon.png') no-repeat left 3% center / 8%;
+  padding: 0.25rem 2.5rem;
+  background: rgba(0, 0, 0, 0.09) url('/search-icon.png') no-repeat left 3% center / 8%;
+}
+
+.search-bar-container > ul {
+  position: absolute;
+  display: none; 
+  z-index: 1;
+  top: 120%;
+  gap: 0.1rem;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  min-height: 100%;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.09);
+  border-radius: var(--border-radius);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 7px 29px 0 rgba(6, 14, 75, 0.5);
+}
+
+.search-bar-container ul li {
+  cursor: pointer;
+  overflow: hidden;
+  text-wrap: nowrap;
+  font-weight: 300;
+  font-size: 0.9rem;
+  padding: 1rem 0.5rem;
+  text-overflow: ellipsis;
+}
+
+.search-bar-container ul li:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius);
+}
+
+.search-bar-container .searchbar:focus + ul {
+  display: flex;
 }
 
 .current-weather-container {
