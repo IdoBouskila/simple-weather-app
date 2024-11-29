@@ -1,4 +1,4 @@
-import fetchExternalData from '../../fetch-external-data';
+import fetchExternalData from './fetch-external-data';
 
 type ExternalSearchResponse = Array<{
     id: number;
