@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "preview": "vite preview",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "lint": "concurrently -n eslint,tsc -c magenta,blue \"eslint . --report-unused-disable-directives --max-warnings 0\" \"tsc --project tsconfig.app.json\""
   },
   "dependencies": {
     "@tanstack/react-query": "^5.61.5",
