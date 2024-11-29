@@ -18,7 +18,13 @@ jobs:
     
           - name: Install dependencies for client
             working-directory: ./client
-            run: yarn install
+            run: |
+              if [ -f yarn.lock ]; then
+                yarn install
+              else
+                echo "yarn.lock not found in client directory"
+                exit 1
+              fi
     
           - name: Run linter for client
             working-directory: ./client
@@ -26,7 +32,13 @@ jobs:
     
           - name: Install dependencies for server
             working-directory: ./server
-            run: yarn install
+            run: |
+              if [ -f yarn.lock ]; then
+                yarn install
+              else
+                echo "yarn.lock not found in server directory"
+                exit 1
+              fi
     
           - name: Run linter for server
             working-directory: ./server
