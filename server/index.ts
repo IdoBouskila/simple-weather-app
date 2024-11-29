@@ -18,7 +18,9 @@ const appRouter = router({
 
 const server = createHTTPServer({
 	router: appRouter,
-	middleware: cors(),
+	middleware: cors({ origin: '*' }),
 });
 
-server.listen(process.env.PORT || 3001);
+server.listen(process.env.PORT || 3000, () => {
+	console.log(`🚀 Server ready at http://localhost:${ process.env.PORT || 3000 }`);
+});
