@@ -1,5 +1,5 @@
-import Map from './Map';
-import { PiDropLight, PiEyeLight, PiSunLight, PiThermometerSimple, PiWind, PiWindLight } from 'react-icons/pi';
+import Map from './map';
+import { PiWind, PiEyeLight, PiSunLight, PiDropLight, PiWindLight, PiThermometerSimple } from 'react-icons/pi';
 
 const Dashboard = () => {
     return (
