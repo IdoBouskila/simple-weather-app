@@ -1,4 +1,4 @@
-name: Client Lint
+name: Server Lint
 
 on:
   pull_request:
@@ -16,10 +16,10 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies (client)
-        working-directory: ./client
+      - name: Install dependencies (server)
+        working-directory: ./server
         run: yarn install
 
-      - name: Run linter (client)
-        working-directory: ./client
+      - name: Run linter (server)
+        working-directory: ./server
         run: yarn lint
