@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import cors from 'cors';
-import { publicProcedure, router } from './utils/trpc';
+import { router, publicProcedure } from './utils/trpc';
 import { fetchSearch } from './utils/fetchers/fetchers';
 import { createHTTPServer } from '@trpc/server/adapters/standalone';
 

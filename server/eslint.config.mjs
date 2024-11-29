@@ -1,32 +1,26 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
+import globals from "globals";
+import pluginJs from "@eslint/js";
+import tseslint from "typescript-eslint";
 import perfectionist from 'eslint-plugin-perfectionist';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 
 export default tseslint.config(
 	{ ignores: ['dist'] },
 	{
-		extends: [js.configs.recommended, ...tseslint.configs.recommended],
-		files: ['**/*.{ts,tsx}'],
+		extends: [
+			pluginJs.configs.recommended,
+			...tseslint.configs.recommended,
+		],
+		files: ['**/*.{js,mjs,cjs,ts}'],
 		languageOptions: {
 			ecmaVersion: 2020,
 			globals: globals.browser,
 		},
 		plugins: {
-			'react-hooks': reactHooks,
-			'react-refresh': reactRefresh,
 			unicorn: eslintPluginUnicorn,
 			perfectionist: perfectionist,
 		},
 		rules: {
-			...reactHooks.configs.recommended.rules,
-			'react-refresh/only-export-components': [
-				'warn',
-				{ allowConstantExport: true },
-			],
 			'perfectionist/sort-imports': [
 				'error',
 				{

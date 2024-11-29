@@ -1,5 +1,5 @@
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, Marker, TileLayer } from 'react-leaflet';
+import { Marker, TileLayer, MapContainer } from 'react-leaflet';
 
 const mapSettings = {
     defaultZoom: 11,
