@@ -1,0 +1,14 @@
+{
+	"name": "weather-app",
+	"version": "1.0.0",
+	"description": "A simple weather app",
+	"scripts": {
+		"client": "cd client && yarn run dev",
+		"server": "cd server && node --watch server.js",
+		"lint::client": "cd client && yarn run lint",
+        "lint::server": "cd server && yarn run lint",
+        "lint": "yarn run lint::client && yarn run lint::server"
+	},
+	"author": "",
+	"license": "ISC"
+}
