@@ -361,6 +361,7 @@ main {
 .popular-cities {
   gap: 1rem;
   display: flex;
+  min-height: 0;
   flex-direction: column;
   grid-area: popular-cities;
   /* TODO: [-] Extract to variable */
@@ -368,9 +369,10 @@ main {
 }
 
 .popular-cities .cities {
-  justify-content: space-around;
   flex: 1;
+  gap: 2rem;
   display: flex;
+  overflow: auto;
   flex-direction: column;
 }
 
