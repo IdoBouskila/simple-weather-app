@@ -1,4 +1,5 @@
 import { trpc } from '@utils/trpc';
+import FavoriteButton from '@components/shared/favorite-button';
 
 const ResultList: React.FC<{
     searchQuery: string;
@@ -18,8 +19,10 @@ const ResultList: React.FC<{
             {
                 data?.length ?
                     data.map((location) => (
-                        <li key={ location.id }>
-                            { location.name }
+                        <li key={ location.id } onClick={ () => console.error('Click')}>
+                            <span>{ location.name }</span>
+
+                            <FavoriteButton name={ location.name } />
                         </li>
                     ))
                 :
