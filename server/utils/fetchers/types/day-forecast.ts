@@ -11,9 +11,9 @@ type DayForecast = {
 };
 
 type DayForecastResponse = {
-	forecast: DayForecast;
 	location: Location;
 	current: CurrentWeatherResponse['current'];
+	forecast: Record<'forecastday', DayForecast[]>;
 };
 
 export default DayForecastResponse;

@@ -14,6 +14,13 @@ const appRouter = router({
 
 			return results;
 		}),
+	getWeeklyForecast: publicProcedure
+		.input(z.string())
+		.query(async ({ input }) => {
+			const results = await fetchSearch(input);
+
+			return results;
+		}),
 	getPopularLocations: publicProcedure
 		.query(async () => {
 			const results = await fetchPopularLocations();
