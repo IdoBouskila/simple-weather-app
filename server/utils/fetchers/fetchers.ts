@@ -1,4 +1,5 @@
 import fetchExternalData from './fetch-external-data';
+import DayForecastResponse from './types/day-forecast';
 import CurrentWeatherResponse from './types/current-forecast';
 import LocationSearchResponse from './types/search-locations';
 
