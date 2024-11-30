@@ -18,8 +18,8 @@ export const fetchSearch = async (query: string) => {
         searchParams: searchParams,
     });
 
-    return data.map(({ name, region, country, ...rest }) => ({
-        ...rest,
-        name: `${ name }, ${ region }, ${ country }`,
+    return data.map((location) => ({
+        id: location.id,
+        name: `${ location.name }, ${ location.region }, ${ location.country }`,
     }));
 }
