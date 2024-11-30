@@ -1,12 +1,9 @@
 import Map from './map';
-import SearchBar from './search-bar/search-bar';
 import { PiWind, PiEyeLight, PiSunLight, PiDropLight, PiWindLight, PiThermometerSimple } from 'react-icons/pi';
 
 const Dashboard = () => {
     return (
         <div className='dashboard'>
-            <SearchBar />
-
             <div className='current-weather-container'>
                 <div className='title-container'>
                     <h1>Current Weather</h1>

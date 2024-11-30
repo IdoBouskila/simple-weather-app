@@ -161,22 +161,36 @@ a {
   background: var(--active-color);
 }
 
-.dashboard {
-  --map-width: 50%;
-  --padding: 1.25rem;
-  --border-radius: 1rem; 
-  --top-bar-height: 2.5rem;
-  --dashboard-first-row-height: 42%;
-  
-  gap: 1rem;
-  width: 100%;
+main {
   display: grid;
   padding: 2rem;
+  --gap: 2rem;
+  --search-bar-height: 2.5rem;
+  --middle-column-width: 50%;
+  gap: 0px var(--gap);
+  grid-template: 'searchbar . .'
+                 'content content content';
+  width: 100%;
+  grid-template-columns: minmax(0, 1fr) 1fr 1fr;
+  grid-template-rows: var(--search-bar-height) 1fr;
+  grid-template-columns: 1fr var(--middle-column-width) 1fr;
+  
+}
+
+.dashboard {
+  --padding: 1.25rem;
+  --border-radius: 1rem; 
+  --dashboard-first-row-height: 42%;
+  
+  width: 100%;
+  display: grid;
+  min-height: 0;
+  gap: var(--gap);
+  grid-area: content;
   grid-template: 'searchbar . .'
                  'current-forecast map popular-cities'
                  'weekly-forecast hourly-forecast hourly-forecast';
-  grid-template-columns: minmax(0, 1fr) var(--map-width) minmax(0, 1fr);
-  grid-template-rows: var(--top-bar-height) var(--dashboard-first-row-height) minmax(0, 1fr);
+  grid-template-columns: 1fr var(--middle-column-width) 1fr;
 }
 
 .dashboard > div:not(.search-bar-container) {
@@ -354,6 +368,7 @@ a {
 .weekly-forecast {
   gap: 0.5rem;
   display: flex;
+  overflow: auto;
   flex-direction: column;
   grid-area: weekly-forecast;
   /* TODO: [-] Extract to variable */
