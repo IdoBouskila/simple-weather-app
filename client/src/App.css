@@ -220,37 +220,43 @@ main {
 }
 
 .search-bar-container > ul {
-  position: absolute;
-  display: none; 
   z-index: 1;
   top: 120%;
   gap: 0.1rem;
   width: 100%;
-  padding: 0.5rem 0.75rem;
+  display: none;
   min-height: 100%;
+  position: absolute;
+  border-radius: 1rem;
   flex-direction: column;
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.09);
-  border-radius: var(--border-radius);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 7px 29px 0 rgba(6, 14, 75, 0.5);
 }
 
 .search-bar-container ul li {
+  display: flex;
   cursor: pointer;
-  overflow: hidden;
-  text-wrap: nowrap;
   font-weight: 300;
   font-size: 0.9rem;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.75rem;
+  justify-content: space-between;
+  border-radius: 1rem;
+}
+
+.search-bar-container li:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.search-bar-container ul li span {
+  width: 80%;
+  overflow: hidden;
+  text-wrap: nowrap;
   text-overflow: ellipsis;
 }
 
-.search-bar-container ul li:hover {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: var(--border-radius);
-}
-
+.search-bar-container ul:hover,
 .search-bar-container .searchbar:focus + ul {
   display: flex;
 }
