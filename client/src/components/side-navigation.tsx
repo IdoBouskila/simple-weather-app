@@ -1,10 +1,10 @@
-import tabs from '@utils/tabs';
+import tabs, { Tab } from '@utils/tabs';
 import { RxGithubLogo } from 'react-icons/rx';
 
 const SideNavigation: React.FC<{
-	currentTabId: string;
-	setCurrentTab: (tab: string) => void;
-}> = ({  currentTabId, setCurrentTab }) => {
+	currentTab: Tab;
+	setCurrentTab: (tab: Tab) => void;
+}> = ({ currentTab, setCurrentTab }) => {
 	return (
 		<div className='side-navigation'>
 			<span className='icon'></span>
@@ -12,13 +12,13 @@ const SideNavigation: React.FC<{
 			<ul>
 				{
 					tabs.map((tab) => {
-						const isTabActive = tab.id === currentTabId;
+						const isTabActive = tab.id === currentTab.id;
 
 						return (
 							<li
 								key={ tab.id }
 								title={ tab.label }
-								onClick={ () => setCurrentTab(tab.id) }
+								onClick={ () => setCurrentTab(tab) }
 								className={ isTabActive ? 'active' : '' }
 							>
                                 <tab.icon />

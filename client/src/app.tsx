@@ -1,11 +1,11 @@
 import './App.css';
 import tabs from '@utils/tabs';
 import { useState } from 'react';
-import Dashboard from '@components/dashboard';
 import SideNavigation from '@components/side-navigation';
+import SearchBar from '@components/search-bar/search-bar';
 
 function App() {
-	const [currentTabId, setCurrentTabId] = useState(tabs[0].id);
+	const [currentTab, setCurrentTab] = useState(tabs[0]);
 
 	return (
 		<>
@@ -13,11 +13,14 @@ function App() {
 			
 			<div className='app-container'>
 				<SideNavigation
-					currentTabId={ currentTabId }
-					setCurrentTab={ setCurrentTabId }
+					currentTab={ currentTab }
+					setCurrentTab={ setCurrentTab }
 				/>
 
-				<Dashboard />
+				<main>
+					<SearchBar />
+					<currentTab.component />
+				</main>
 			</div>
 		</>
 	);
