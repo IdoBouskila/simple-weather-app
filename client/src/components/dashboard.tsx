@@ -1,12 +1,10 @@
 import Map from './map';
-import SearchBar from './search-bar/search-bar';
+import PopularLocations from './popular-locations';
 import { PiWind, PiEyeLight, PiSunLight, PiDropLight, PiWindLight, PiThermometerSimple } from 'react-icons/pi';
 
 const Dashboard = () => {
     return (
         <div className='dashboard'>
-            <SearchBar />
-
             <div className='current-weather-container'>
                 <div className='title-container'>
                     <h1>Current Weather</h1>
@@ -50,36 +48,7 @@ const Dashboard = () => {
 
             <Map coordinates={{ lat: 51.5, lng: 0.12 }} />
 
-            <div className='popular-cities'>
-                <h1>Popular Cities</h1>
-
-                <div className='cities'>
-                    <div>
-                        <h2>London</h2>
-                        <span>25°C</span>
-                    </div>
-
-                    <div>
-                        <h2>Paris</h2>
-                        <span>30°C</span>
-                    </div>
-
-                    <div>
-                        <h2>New York</h2>
-                        <span>20°C</span>
-                    </div>
-
-                    <div>
-                        <h2>Tokyo</h2>
-                        <span>35°C</span>
-                    </div>
-
-                    <div>
-                        <h2>Rome</h2>
-                        <span>28°C</span>
-                    </div>
-                </div>
-            </div>
+            <PopularLocations />
 
             <div className='weekly-forecast'>
                 <h1>Forecast</h1>

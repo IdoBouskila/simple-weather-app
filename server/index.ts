@@ -1,8 +1,8 @@
 import { z } from 'zod';
 import cors from 'cors';
 import { router, publicProcedure } from './utils/trpc';
-import { fetchSearch } from './utils/fetchers/fetchers';
 import { createHTTPServer } from '@trpc/server/adapters/standalone';
+import { fetchSearch, fetchPopularLocations } from './utils/fetchers/fetchers';
 
 export type AppRouter = typeof appRouter;
 
@@ -18,6 +18,12 @@ const appRouter = router({
 		.input(z.string())
 		.query(async ({ input }) => {
 			const results = await fetchSearch(input);
+
+			return results;
+		}),
+	getPopularLocations: publicProcedure
+		.query(async () => {
+			const results = await fetchPopularLocations();
 
 			return results;
 		}),
