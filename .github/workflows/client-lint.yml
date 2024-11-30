@@ -16,6 +16,11 @@ jobs:
         with:
           node-version: '18'
 
+      # Install dependencies for the server as well, because the client depends on it (tRPC)
+      - name: Install dependencies (server)
+        working-directory: ./server
+        run: yarn install
+        
       - name: Install dependencies (client)
         working-directory: ./client
         run: yarn install
