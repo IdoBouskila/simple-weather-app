@@ -43,7 +43,7 @@ export const fetchPopularLocations = async () => {
 
         return {
             name: data.location.name,
-            current: data.current.temp_c,
+            temp_c: data.current.temp_c,
         };
     }));
 };
