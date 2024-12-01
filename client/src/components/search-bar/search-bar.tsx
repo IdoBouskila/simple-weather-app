@@ -2,7 +2,9 @@ import { useState } from 'react';
 import ResultList from './result-list';
 import { debounce } from '@utils/utility-functions';
 
-const SearchBar = () => {
+const SearchBar: React.FC<{
+    setSelectedLocation: (location: string) => void;
+}> = ({ setSelectedLocation }) => {
     const [searchQuery, setSearchQuery] = useState('');
 
     return (
@@ -16,7 +18,10 @@ const SearchBar = () => {
 
             {
                 searchQuery && (
-                    <ResultList searchQuery={ searchQuery } />
+                    <ResultList
+                        searchQuery={ searchQuery }
+                        setSelectedLocation={ setSelectedLocation }
+                    />
                 )
             }
         </div>

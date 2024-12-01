@@ -1,50 +1,29 @@
 import Map from './map';
+import { trpc } from '@utils/trpc';
 import PopularLocations from './popular-locations';
-import { PiWind, PiEyeLight, PiSunLight, PiDropLight, PiWindLight, PiThermometerSimple } from 'react-icons/pi';
+import CurrentWeatherCard from './current-weather-card';
+import { PiWind, PiDropLight, PiThermometerSimple } from 'react-icons/pi';
 
-const Dashboard = () => {
+const Dashboard: React.FC<{
+    selectedLocation: string;
+    setSelectedLocation: React.Dispatch<React.SetStateAction<string>>;
+}> = ({ selectedLocation, setSelectedLocation }) => {
+    const [data] = trpc.getWeeklyForecast.useSuspenseQuery(selectedLocation);
+
+    const { current, hourly, forecast, location } = data;
+
     return (
         <div className='dashboard'>
-            <div className='current-weather-container'>
-                <div className='title-container'>
-                    <h1>Current Weather</h1>
-                    <span className='time'>18:15</span>
-                </div>
-
-                <div className='weather-degrees-container'>
-                    <img
-                        src='/3d-weather-icon.png'
-                        alt='weather-icon'
-                    />
-
-                    <div>
-                        <span className='degrees'>25</span>
-                        <span className='weather-description'>Clear Sky</span>
-                    </div>
-                </div>
-
-                <div className='weather-details'>
-                    <div>
-                        <PiWindLight />
-                        <span>5km/h</span>
-                    </div>
-
-                    <div>
-                        <PiDropLight />
-                        <span>80%</span>
-                    </div>
-
-                    <div>
-                        <PiSunLight />
-                        <span>3</span>
-                    </div>
-
-                    <div>
-                        <PiEyeLight />
-                        <span>10km</span>
-                    </div>
-                </div>
-            </div>
+            <CurrentWeatherCard
+                uv={ current.uv }
+                wind={ current.wind }
+                name={ location.name }
+                humidity={ current.humidity }
+                localtime={ location.localtime }
+                visibility={ current.visibility }
+                description={ current.description }
+                degrees={ Math.round(current.temp_c) }
+            />
 
             <Map coordinates={{ lat: 51.5, lng: 0.12 }} />
 
