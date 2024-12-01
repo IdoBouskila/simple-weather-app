@@ -174,7 +174,6 @@ main {
   width: 100%;
   grid-template-rows: var(--search-bar-height) minmax(0, 1fr);
   grid-template-columns: minmax(0, 1fr) var(--middle-column-width) minmax(0, 1fr);
-  
 }
 
 .dashboard {
