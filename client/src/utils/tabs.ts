@@ -8,7 +8,10 @@ export type Tab = {
     id: string;
     label: string;
     icon: IconType;
-    component: React.FC;
+    component: React.FC<{
+        selectedLocation: string;
+        setSelectedLocation: React.Dispatch<React.SetStateAction<string>>
+    }>;
 };
 
 const tabs: Tab[] = [

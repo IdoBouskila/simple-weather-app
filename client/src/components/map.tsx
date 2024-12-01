@@ -15,6 +15,9 @@ const Map: React.FC<{ coordinates: Record<'lat' | 'lng', number>; }> = ({
             center={ coordinates }
             className='map-container'
             scrollWheelZoom={ false }
+            key={ new Date().getTime() }
+            // workaround for leaflet bug:
+            //https://github.com/PaulLeCam/react-leaflet/issues/936
             zoom={ mapSettings.defaultZoom }
         >
             <TileLayer

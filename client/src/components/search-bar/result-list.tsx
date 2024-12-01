@@ -3,7 +3,8 @@ import FavoriteButton from '@components/shared/favorite-button';
 
 const ResultList: React.FC<{
     searchQuery: string;
-}> = ({ searchQuery }) => {
+    setSelectedLocation: (loaction: string) => void;
+}> = ({ searchQuery, setSelectedLocation }) => {
     const { data, isLoading } = trpc.searchLocations.useQuery(searchQuery);
 
     if(isLoading) {
@@ -19,7 +20,10 @@ const ResultList: React.FC<{
             {
                 data?.length ?
                     data.map((location) => (
-                        <li key={ location.id } onClick={ () => console.error('Click')}>
+                        <li
+                            key={ location.id }
+                            onClick={ () => setSelectedLocation(location.name) }
+                        >
                             <span>{ location.name }</span>
 
                             <FavoriteButton name={ location.name } />

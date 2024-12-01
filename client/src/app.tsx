@@ -1,12 +1,13 @@
 import './App.css';
 import tabs from '@utils/tabs';
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import SideNavigation from '@components/side-navigation';
 import SearchBar from '@components/search-bar/search-bar';
 import { FavoritesProvider } from '@context/favorites-provider';
 
 function App() {
 	const [currentTab, setCurrentTab] = useState(tabs[0]);
+	const [selectedLocation, setSelectedLocation] = useState('Jerusalem');
 
 	return (
 		<>
@@ -20,9 +21,14 @@ function App() {
 
 				<main>
 					<FavoritesProvider>
-						<SearchBar />
+						<SearchBar setSelectedLocation={ setSelectedLocation } />
 						
-						<currentTab.component />
+						<Suspense fallback={ <div>Loading...</div> }>
+							<currentTab.component
+								selectedLocation={ selectedLocation }
+								setSelectedLocation={ setSelectedLocation }
+							/>
+						</Suspense>
 					</FavoritesProvider>
 				</main>
 			</div>

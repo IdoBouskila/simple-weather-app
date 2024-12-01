@@ -1,109 +1,38 @@
 import Map from './map';
+import { trpc } from '@utils/trpc';
+import WeeklyForecast from './weekly-forecast';
+import HourlyForecast from './hourly-forecast';
 import PopularLocations from './popular-locations';
-import { PiWind, PiEyeLight, PiSunLight, PiDropLight, PiWindLight, PiThermometerSimple } from 'react-icons/pi';
+import CurrentWeatherCard from './current-weather-card';
 
-const Dashboard = () => {
+const Dashboard: React.FC<{
+    selectedLocation: string;
+    setSelectedLocation: React.Dispatch<React.SetStateAction<string>>;
+}> = ({ selectedLocation, setSelectedLocation }) => {
+    const [data] = trpc.getWeeklyForecast.useSuspenseQuery(selectedLocation);
+
+    const { current, hourly, forecast, location } = data;
+
     return (
         <div className='dashboard'>
-            <div className='current-weather-container'>
-                <div className='title-container'>
-                    <h1>Current Weather</h1>
-                    <span className='time'>18:15</span>
-                </div>
+            <CurrentWeatherCard
+                uv={ current.uv }
+                wind={ current.wind }
+                name={ location.name }
+                humidity={ current.humidity }
+                localTime={ location.localtime }
+                visibility={ current.visibility }
+                description={ current.description }
+                degrees={ Math.round(current.temp_c) }
+            />
 
-                <div className='weather-degrees-container'>
-                    <img
-                        src='/3d-weather-icon.png'
-                        alt='weather-icon'
-                    />
+            <Map coordinates={{ lat: location.lat, lng: location.lng }} />
 
-                    <div>
-                        <span className='degrees'>25</span>
-                        <span className='weather-description'>Clear Sky</span>
-                    </div>
-                </div>
+            <PopularLocations setSelectedLocation={ setSelectedLocation } />
 
-                <div className='weather-details'>
-                    <div>
-                        <PiWindLight />
-                        <span>5km/h</span>
-                    </div>
+            <WeeklyForecast forecast={ forecast } />
 
-                    <div>
-                        <PiDropLight />
-                        <span>80%</span>
-                    </div>
-
-                    <div>
-                        <PiSunLight />
-                        <span>3</span>
-                    </div>
-
-                    <div>
-                        <PiEyeLight />
-                        <span>10km</span>
-                    </div>
-                </div>
-            </div>
-
-            <Map coordinates={{ lat: 51.5, lng: 0.12 }} />
-
-            <PopularLocations />
-
-            <div className='weekly-forecast'>
-                <h1>Forecast</h1>
-                
-                <ul>
-                    {
-                        Array.from({ length: 7 }).map((_, index) => (
-                            <li key={ index }>
-                                <img src='/3d-weather-icon.png' alt='weather-icon' />
-
-                                <span>
-                                    24° / 18°
-                                </span>
-
-                                <span className='date'>
-                                    25 Jul, Thu
-                                </span>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
-
-            <div className='hourly-forecast'>
-                <h1>Hourly Forecast</h1>
-
-                <div>
-                    {
-                        Array.from({ length: 5 }).map((_, index) => (
-                            <div key={ index } className='weather-item glassmorphism'>
-                                <span className='weather-item-time'>7 PM</span>
-
-                                <span className='weather-item-temp'>20°</span>
-
-                                <div className='weather-details'>
-                                    <div>
-                                        <PiThermometerSimple className='small-icon' />
-                                        <span>Feels 22°</span>
-                                    </div>
-
-                                    <div>
-                                        <PiDropLight className='small-icon' />
-                                        <span>8%</span>
-                                    </div>
-
-                                    <div>
-                                        <PiWind className='small-icon' />
-                                        <span>20 km/h</span>
-                                    </div>
-                                </div>            
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
+            <HourlyForecast forecast={ hourly } />            
         </div>
     );
 };
