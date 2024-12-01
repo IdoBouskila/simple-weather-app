@@ -1,6 +1,6 @@
 const WeatherDetails: React.FC<{
     unit: string;
-    value: number;
+    value: number | string;
     icon: React.JSX.Element;
 }> = ({ unit, icon, value }) => {
     return (
