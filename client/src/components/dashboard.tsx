@@ -19,7 +19,9 @@ const Dashboard: React.FC<{
                 uv={ current.uv }
                 wind={ current.wind }
                 name={ location.name }
+                isNight={ ! current.is_day }
                 humidity={ current.humidity }
+                iconCode={ current.icon_code }
                 localTime={ location.localtime }
                 visibility={ current.visibility }
                 description={ current.description }

@@ -1,5 +1,6 @@
 import { getHours } from '@utils/utility-functions';
 import WeatherDetails from '@components/shared/weather-details';
+import WeatherIcon from '@components/shared/weather-icon/weather-icon';
 import { PiEyeLight, PiSunLight, PiDropLight, PiWindLight } from 'react-icons/pi';
 
 type Props = {
@@ -8,6 +9,8 @@ type Props = {
     wind: number;
     degrees: number;
     humidity: number;
+    isNight: boolean;
+    iconCode: number;
     localTime: string;
     visibility: number;
     description: string;
@@ -18,7 +21,9 @@ const CurrentWeatherCard: React.FC<Props> = ({
 	name,
 	wind,
 	degrees,
+    isNight,
 	humidity,
+    iconCode,
     localTime,
 	visibility,
 	description,
@@ -33,10 +38,7 @@ const CurrentWeatherCard: React.FC<Props> = ({
             </div>
 
             <div className='weather-degrees-container'>
-                <img
-                    src='/3d-weather-icon.png'
-                    alt='weather-icon'
-                />
+                <WeatherIcon isNight={ isNight } weatherCode={ iconCode } />
 
                 <div>
                     <span className='degrees'>{ degrees }</span>
