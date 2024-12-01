@@ -30,6 +30,7 @@ export const fetchForecast = async (query: string) => {
             lat: location.lat,
             lng: location.lon,
             name: location.name,
+            localtime: location.localtime,
         },
         current: {
             uv: current.uv,

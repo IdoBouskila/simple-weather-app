@@ -20,7 +20,7 @@ const Dashboard: React.FC<{
                 wind={ current.wind }
                 name={ location.name }
                 humidity={ current.humidity }
-                localtime={ location.localtime }
+                localTime={ location.localtime }
                 visibility={ current.visibility }
                 description={ current.description }
                 degrees={ Math.round(current.temp_c) }
