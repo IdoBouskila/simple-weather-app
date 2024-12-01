@@ -79,10 +79,11 @@ a {
 
 .app-container {
   display: flex;
+  min-height: 0;
   position: relative;
   border-radius: 16px;
   width: clamp(80%, 800px, 950px);
-  height: clamp(550px, 75%, 700px);
+  height: clamp(550px, 80%, 700px);
   background: rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -164,33 +165,33 @@ a {
 main {
   display: grid;
   padding: 2rem;
-  --gap: 2rem;
+  --gap: 1.5rem;
   --search-bar-height: 2.5rem;
   --middle-column-width: 50%;
-  gap: 0px var(--gap);
+  gap: var(--gap);
   grid-template: 'searchbar . .'
                  'content content content';
   width: 100%;
-  grid-template-columns: minmax(0, 1fr) 1fr 1fr;
-  grid-template-rows: var(--search-bar-height) 1fr;
-  grid-template-columns: 1fr var(--middle-column-width) 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: var(--search-bar-height) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) var(--middle-column-width) minmax(0, 1fr);
   
 }
 
 .dashboard {
   --padding: 1.25rem;
   --border-radius: 1rem; 
-  --dashboard-first-row-height: 42%;
+  --dashboard-first-row-height: 45%;
   
   width: 100%;
   display: grid;
   min-height: 0;
   gap: var(--gap);
   grid-area: content;
-  grid-template: 'searchbar . .'
-                 'current-forecast map popular-cities'
+  grid-template: 'current-forecast map popular-cities'
                  'weekly-forecast hourly-forecast hourly-forecast';
-  grid-template-columns: 1fr var(--middle-column-width) 1fr;
+  grid-template-rows: var(--dashboard-first-row-height) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) var(--middle-column-width) minmax(0, 1fr);
 }
 
 .dashboard > div:not(.search-bar-container) {
