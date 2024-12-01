@@ -36,6 +36,7 @@ export const fetchForecast = async (query: string) => {
             uv: current.uv,
             temp_c: current.temp_c,
             wind: current.wind_kph,
+            is_day: current.is_day,
             humidity: current.humidity,
             visibility: current.vis_km,
             icon_code: current.condition.code,

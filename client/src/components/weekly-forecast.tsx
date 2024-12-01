@@ -1,3 +1,5 @@
+import WeatherIcon from '@components/shared/weather-icon/weather-icon';
+
 type Forecast = {
     date: string;
     icon_code: number;
@@ -25,7 +27,7 @@ const WeeklyForecast: React.FC<{
 
                         return (
                             <li key={ day.date }>
-                                <img src='/3d-weather-icon.png' alt='weather-icon' />
+                                <WeatherIcon weatherCode={ day.icon_code } />
 
                                 <span>
                                     { Math.round(day.max_temp_c) }° / { Math.round(day.min_temp_c) }°
