@@ -28,7 +28,7 @@ const Dashboard: React.FC<{
 
             <Map coordinates={{ lat: location.lat, lng: location.lng }} />
 
-            <PopularLocations />
+            <PopularLocations setSelectedLocation={ setSelectedLocation } />
 
             <WeeklyForecast forecast={ forecast } />
 

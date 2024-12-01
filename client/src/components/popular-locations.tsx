@@ -1,6 +1,8 @@
 import { trpc } from '@utils/trpc';
 
-const PopularLocations = () => {
+const PopularLocations: React.FC<{
+    setSelectedLocation: (location: string) => void;
+}> = ({ setSelectedLocation }) => {
     const [data] = trpc.getPopularLocations.useSuspenseQuery();
 
     return (
@@ -10,7 +12,10 @@ const PopularLocations = () => {
             <div className='cities'>
                 {
                     data.map((city) => (
-                        <div key={ city.name }>
+                        <div
+                            key={ city.name }
+                            onClick={ () => setSelectedLocation(city.name) }
+                        >
                             <h2>{ city.name }</h2>
                             <span>{ city.temp_c }°C</span>
                         </div>

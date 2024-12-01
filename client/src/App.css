@@ -371,7 +371,7 @@ main {
 
 .popular-cities .cities {
   flex: 1;
-  gap: 2rem;
+  gap: 1rem;
   display: flex;
   overflow: auto;
   flex-direction: column;
@@ -379,7 +379,15 @@ main {
 
 .popular-cities .cities div {
   display: flex;
+  cursor: pointer;
+  border-radius: 5rem;
+  padding: 0.5rem 0.5rem;
   justify-content: space-between;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.popular-cities .cities div:hover {
+  opacity: 0.6;
 }
 
 .popular-cities .cities h2,
