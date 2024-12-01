@@ -2,7 +2,7 @@ import { z } from 'zod';
 import cors from 'cors';
 import { router, publicProcedure } from './utils/trpc';
 import { createHTTPServer } from '@trpc/server/adapters/standalone';
-import { fetchSearch, fetchPopularLocations } from './utils/fetchers/fetchers';
+import { fetchSearch, fetchForecast, fetchPopularLocations } from './utils/fetchers/fetchers';
 
 export type AppRouter = typeof appRouter;
 
@@ -17,7 +17,7 @@ const appRouter = router({
 	getWeeklyForecast: publicProcedure
 		.input(z.string())
 		.query(async ({ input }) => {
-			const results = await fetchSearch(input);
+			const results = await fetchForecast(input);
 
 			return results;
 		}),
