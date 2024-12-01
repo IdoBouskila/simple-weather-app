@@ -25,7 +25,7 @@ const Dashboard: React.FC<{
                 degrees={ Math.round(current.temp_c) }
             />
 
-            <Map coordinates={{ lat: 51.5, lng: 0.12 }} />
+            <Map coordinates={{ lat: location.lat, lng: location.lng }} />
 
             <PopularLocations />
 
