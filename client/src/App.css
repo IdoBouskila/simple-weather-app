@@ -329,13 +329,13 @@ main {
 .weather-degrees-container .degrees::after {
   font-size: 1rem;
   font-weight: 400;
-  inset: 0 -0.75rem auto auto;
+  margin-left: 5px;
 }
 
 .weather-degrees-container .weather-description {
   font-weight: 300;
+  width: max-content;
 }
-
 
 .weather-details {
   display: flex;
