@@ -8,9 +8,9 @@ type Props = {
     wind: number;
     degrees: number;
     humidity: number;
+    localTime: string;
     visibility: number;
     description: string;
-    localtime: string;
 }
 
 const CurrentWeatherCard: React.FC<Props> = ({
@@ -19,11 +19,11 @@ const CurrentWeatherCard: React.FC<Props> = ({
 	wind,
 	degrees,
 	humidity,
-    localtime,
+    localTime,
 	visibility,
 	description,
 }) => {
-    const formattedTime = getHours(localtime);
+    const formattedTime = getHours(localTime);
 
     return (
         <div className='current-weather-container'>
