@@ -33,24 +33,26 @@ export const fetchForecast = async (query: string) => {
         },
         current: {
             uv: current.uv,
+            temp_c: current.temp_c,
             wind: current.wind_kph,
             humidity: current.humidity,
             visibility: current.vis_km,
             icon_code: current.condition.code,
+            description: current.condition.text,
         },
         forecast: forecast.forecastday.map(({ date, day }) => ({
             date: date,
-            maxTemp: day.maxtemp_c,
-            minTemp: day.mintemp_c,
+            max_temp_c: day.maxtemp_c,
+            min_temp_c: day.mintemp_c,
             condition: day.condition.text,
             icon_code: day.condition.code,
         })),
-        hourly: forecast.forecastday[0].hour.map((test) => ({
-            time: test.time,
-            temp: test.temp_c,
-            wind: test.wind_kph,
-            humidity: test.humidity,
-            feels_like: test.feelslike_c,
+        hourly: forecast.forecastday[0].hour.map((data) => ({
+            time: data.time,
+            temp_c: data.temp_c,
+            wind: data.wind_kph,
+            humidity: data.humidity,
+            feels_like: data.feelslike_c,
         })),
     };
 }
