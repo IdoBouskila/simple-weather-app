@@ -412,6 +412,7 @@ main {
   font-weight: 300;
   padding: 8px 10px;
   align-items: center;
+  justify-content: start;
   border-radius: 0.5rem;
 }
 
@@ -419,8 +420,8 @@ main {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.weekly-forecast li span.date {
-  margin-left: auto;
+.weekly-forecast li span:nth-child(2) {
+  margin-right: 5px;
 }
 
 .weekly-forecast li img {

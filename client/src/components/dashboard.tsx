@@ -1,5 +1,6 @@
 import Map from './map';
 import { trpc } from '@utils/trpc';
+import WeeklyForecast from './weekly-forecast';
 import PopularLocations from './popular-locations';
 import CurrentWeatherCard from './current-weather-card';
 import { PiWind, PiDropLight, PiThermometerSimple } from 'react-icons/pi';
@@ -29,27 +30,7 @@ const Dashboard: React.FC<{
 
             <PopularLocations />
 
-            <div className='weekly-forecast'>
-                <h1>Forecast</h1>
-                
-                <ul>
-                    {
-                        Array.from({ length: 7 }).map((_, index) => (
-                            <li key={ index }>
-                                <img src='/3d-weather-icon.png' alt='weather-icon' />
-
-                                <span>
-                                    24° / 18°
-                                </span>
-
-                                <span className='date'>
-                                    25 Jul, Thu
-                                </span>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
+            <WeeklyForecast forecast={ forecast } />
 
             <div className='hourly-forecast'>
                 <h1>Hourly Forecast</h1>
