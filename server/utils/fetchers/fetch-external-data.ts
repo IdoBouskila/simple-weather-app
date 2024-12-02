@@ -1,19 +1,15 @@
 const apiKey = process.env.API_KEY;
 const BASE = 'http://api.weatherapi.com/v1';
 
-const fetchExternalData = async <Data>({ endpoint, body, searchParams }: {
-	body?: string;
-    searchParams?: URLSearchParams;
+const fetchExternalData = async <Data>({ endpoint, searchParams }: {
 	endpoint: `/${ string }`;
+    searchParams?: URLSearchParams;
 }) => {
 
     const params = searchParams ? `&${ searchParams.toString() }` : '';
     const completeApiUrl = BASE + endpoint + `?key=${ apiKey }` + params;
 
-    const response = await fetch(completeApiUrl, {
-		body,
-		headers: { 'Content-Type': 'application/json' }, // TODO: [-] Check if it needed
-	});
+    const response = await fetch(completeApiUrl);
 
 	if (response.status >= 500) {
 		throw new Error(
