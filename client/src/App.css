@@ -473,11 +473,13 @@ main {
 }
 
 .favorite-item .weather-details,
+.favorite-item .weather-details,
 .hourly-forecast .weather-details {
   display: flex;
   gap: 0.55rem;
 }
 
+.favorite-item .weather-details div,
 .favorite-item .weather-details div,
 .hourly-forecast .weather-details div {
   gap: 0.45rem;
