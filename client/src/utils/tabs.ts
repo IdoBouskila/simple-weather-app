@@ -1,8 +1,8 @@
 import { IconType } from 'react-icons';
 import { RxDashboard } from 'react-icons/rx';
 import Dashboard from '@components/dashboard';
-import Favorites from '@components/favorites';
 import { IoHeartOutline } from 'react-icons/io5';
+import Favorites from '@components/favorites/favorites';
 
 export type Tab = {
     id: string;
