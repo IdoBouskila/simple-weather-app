@@ -266,9 +266,10 @@ main {
   border: none;
   color: #fff;
   display: grid;
+  padding: 0.5rem;
+  aspect-ratio: 1 / 1;
   background: none;
   place-items: center;
-  padding: 0.5rem;
 }
 
 .favorite-button:hover {
@@ -461,6 +462,7 @@ main {
   align-items: center;
   padding: 1rem 0.5rem;
   border-radius: 0.5rem;
+  backdrop-filter: unset;
   flex-direction: column;
 }
 
@@ -492,7 +494,7 @@ main {
 }
 
 .favorites-container {
-  gap: 1rem;
+  gap: 2rem;
   display: flex;
   grid-area: content;
   flex-direction: column;
@@ -524,7 +526,6 @@ main {
   font-weight: 200;
   overflow: hidden;
   text-wrap: nowrap;
-  margin-bottom: 10px;
   text-overflow: ellipsis;
 }
 
@@ -537,6 +538,7 @@ main {
   width: 100%;
   display: flex;
   text-wrap: nowrap;
+  align-items: center;
   justify-content: space-around;
 }
 
@@ -638,7 +640,7 @@ main {
 
   .searchbar {
     padding: 1rem 2.5rem;
-    background: rgba(0, 0, 0, 0.09) url('/search-icon.png') no-repeat left 1% center / 4%;
+    background: rgba(0, 0, 0, 0.09) url('/search-icon.png') no-repeat left 2% center / 1.75rem
   }
 
   .loader {
