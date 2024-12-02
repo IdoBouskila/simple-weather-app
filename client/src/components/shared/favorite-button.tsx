@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { GoHeart, GoHeartFill } from 'react-icons/go';
 import { useFavorites } from '@context/favorites-provider';
 
@@ -10,8 +11,12 @@ const FavoriteButton: React.FC<{ name: string }> = ({ name }) => {
         e.stopPropagation();
         
         if (isFavorite) {
+            toast.info('Removed from favorites');
+
             return removeFavorite(name);
         }
+
+        toast.success('Added to favorites');
 
         addFavorite(name);
     };
