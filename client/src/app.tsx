@@ -23,7 +23,7 @@ function App() {
 					<FavoritesProvider>
 						<SearchBar setSelectedLocation={ setSelectedLocation } />
 						
-						<Suspense fallback={ <div>Loading...</div> }>
+						<Suspense fallback={ <span className='loader'></span> }>
 							<currentTab.component
 								selectedLocation={ selectedLocation }
 								setSelectedLocation={ setSelectedLocation }
