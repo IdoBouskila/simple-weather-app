@@ -1,6 +1,8 @@
 import './App.css';
 import tabs from '@utils/tabs';
 import { Suspense, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import SideNavigation from '@components/side-navigation';
 import SearchBar from '@components/search-bar/search-bar';
 import { FavoritesProvider } from '@context/favorites-provider';
@@ -11,6 +13,8 @@ function App() {
 
 	return (
 		<>
+			<ToastContainer style={{ fontWeight: 300 }} />
+			
 			<div className='clouds'></div>
 			
 			<div className='app-container'>
