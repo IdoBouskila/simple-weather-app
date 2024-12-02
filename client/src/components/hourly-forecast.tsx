@@ -35,7 +35,7 @@ const HourlyForecast: React.FC<{
 
                                     <WeatherDetails
                                         unit='°'
-                                        value={ `Feels ${ hour.feels_like }` }
+                                        value={ `Feels ${ Math.round(hour.feels_like) }` }
                                         icon={ <PiThermometerSimple className='small-icon' /> }
                                     />
                                     
