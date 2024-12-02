@@ -220,10 +220,10 @@ main {
 }
 
 .search-bar-container > ul {
-  z-index: 1;
   top: 120%;
   gap: 0.1rem;
   width: 100%;
+  z-index: 9999;
   display: none;
   min-height: 100%;
   position: absolute;
@@ -521,8 +521,10 @@ main {
 
 .favorites-container h1 {
   width: 100%;
+  font-weight: 200;
   overflow: hidden;
   text-wrap: nowrap;
+  margin-bottom: 10px;
   text-overflow: ellipsis;
 }
 
@@ -590,8 +592,80 @@ main {
 
 /* Support for tablet & mobile */
 @media (max-width: 840px) {
+  html {
+    font-size: 16px;
+  }
+  
+  main {
+    flex: 1;
+    min-height: 0;
+    position: relative;
+    grid-template: 'searchbar' 'content';
+    grid-template-rows: 7.5% minmax(0, 1fr);
+  }
+
   .app-container {
     width: 100%;
     height: 100%;
+    display: flex;
+    border-radius: 0;
+    flex-direction: column-reverse;
+  }
+  
+  .app-container .side-navigation {
+    width: 100%;
+    height: 10%;
+    padding: 1rem;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .app-container .side-navigation ul {
+    margin: auto;
+    flex-direction: row;
+  }
+
+  #root {
+    height: 100vh;
+    display: block;
+  }
+
+  .searchbar {
+    padding: 1rem 2.5rem;
+    background: rgba(0, 0, 0, 0.09) url('/search-icon.png') no-repeat left 1% center / 4%;
+  }
+
+  .loader {
+    grid-area: 'content';
+  }
+
+  .dashboard {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+  }
+
+  .map-container {
+    min-height: 30%;
+  }
+
+  .popular-cities {
+    min-height: 35%;
+  }
+
+  .weekly-forecast {
+    min-height: 40%;
+  }
+
+  .icon {
+    width: 1rem;
+    margin: 10px;
+  }
+
+  .side-navigation .github-link {
+    font-size: 1rem;
+    margin-top: 0;
   }
 }
