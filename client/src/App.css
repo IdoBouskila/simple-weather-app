@@ -309,6 +309,7 @@ main {
 
 .weather-degrees-container > div {
   display: flex;
+  min-width: 0;
   flex-direction: column;
 }
 
@@ -334,7 +335,9 @@ main {
 
 .weather-degrees-container .weather-description {
   font-weight: 300;
-  width: max-content;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 
 .weather-details {
