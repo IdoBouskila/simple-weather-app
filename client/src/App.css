@@ -432,7 +432,7 @@ main {
 }
 
 .weekly-forecast li span:nth-child(2) {
-  margin-right: 5px;
+  margin-right: auto;
 }
 
 .weekly-forecast li img {
@@ -550,6 +550,10 @@ main {
   display: inline-block;
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
+}
+
+.Toastify {
+  position: absolute;
 }
 
 @keyframes rotation {
